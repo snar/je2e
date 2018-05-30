@@ -1,0 +1,9 @@
+AC_INIT(je2e.c)
+AC_CONFIG_HEADER(config.h)
+AC_PROG_CC([cc gcc])
+AC_PROG_INSTALL
+
+AC_CHECK_HEADERS([pcap.h],,[pcap.h not found])
+AC_CHECK_LIB(pcap, pcap_open_offline)
+
+AC_OUTPUT(Makefile)
