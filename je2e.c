@@ -36,7 +36,7 @@ main(int argc, char* argv[])
 	char *filename = NULL;
 	char *dumpfile = NULL;
 	char errbuf[PCAP_ERRBUF_SIZE];
-	pcap_t* pcap, *pcd; 
+	pcap_t* pcap, *pcd;
 	pcap_dumper_t *dumper;
 	const unsigned char* pdata;
 	unsigned char packet[65536];
@@ -62,7 +62,7 @@ main(int argc, char* argv[])
 		usage(1);
 	};
 	filename = argv[0];
-	if (!argv[1]) { 
+	if (!argv[1]) {
 		fprintf(stderr, "No outfile specified\n");
 		usage(1);
 	};
@@ -136,7 +136,7 @@ main(int argc, char* argv[])
 		if (verbose) {
 			printf("... got packet %u, flags %2.2x (%s%s)\n", packetno, flags,
 				((flags & JUNIPER_BPF_EXT) == JUNIPER_BPF_EXT) ? "ext " : "",
-				((flags & JUNIPER_BPF_NO_L2) == JUNIPER_BPF_NO_L2) ? 
+				((flags & JUNIPER_BPF_NO_L2) == JUNIPER_BPF_NO_L2) ?
 					"No-L2 " : "");
 		};
 		jnx_header_len = 4;
